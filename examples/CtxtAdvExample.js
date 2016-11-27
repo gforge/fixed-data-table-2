@@ -6,10 +6,11 @@
 
 import React from 'react';
 import { Table, Column, Cell } from 'fixed-data-table-2';
-import { DataCtxt, AddFilter } from './helpers/HOC';
 import FakeObjectDataListStore from './helpers/FakeObjectDataListStore';
+import { HOC } from 'fixed-data-table-addons';
 
-const AdvancedTable = AddFilter(DataCtxt(Table));
+const { addDataCtxt, addFilter } = HOC;
+const AdvancedTable = addFilter(addDataCtxt(Table));
 
 /**
  * The PagedData class simulates real paginated data where data is fetched
